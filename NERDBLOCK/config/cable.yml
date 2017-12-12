@@ -7,4 +7,4 @@ test:
 production:
   adapter: redis
   url: redis://localhost:6379/1
-  channel_prefix: NERDBLOCK_production
+  channel_prefix: lab4_production
