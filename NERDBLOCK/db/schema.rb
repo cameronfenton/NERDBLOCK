@@ -10,22 +10,97 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171206190047) do
+ActiveRecord::Schema.define(version: 20171213213358) do
 
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
+  create_table "address", force: :cascade do |t|
+    t.integer "address_id"
+    t.string "apt_number"
+    t.string "building_number"
+    t.string "street"
+    t.string "city"
+    t.string "province"
+    t.string "postal_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "password_digest"
-    t.string "remember_digest"
-    t.boolean "admin", default: false
-    t.string "activation_digest"
-    t.boolean "activated", default: false
-    t.datetime "activated_at"
-    t.string "reset_digest"
-    t.datetime "reset_sent_at"
-    t.index ["email"], name: "index_users_on_email", unique: true
+  end
+
+  create_table "distributor", force: :cascade do |t|
+    t.integer "distributor_id"
+    t.integer "address_id"
+    t.string "distributor_name"
+    t.string "distributor_phone"
+    t.string "distributor_email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "genre", force: :cascade do |t|
+    t.integer "genre_id"
+    t.string "genre_name"
+    t.string "genre_description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "item_id"
+    t.string "item_name"
+    t.string "item_description"
+    t.decimal "item_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "order_id"
+    t.integer "user_id"
+    t.integer "subscription_id"
+    t.decimal "monthly_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "stock", force: :cascade do |t|
+    t.integer "item_id"
+    t.integer "distributor_id"
+    t.integer "item_quantity"
+    t.integer "item_refill_quantity"
+    t.decimal "item_refill_cost"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "subscription_options", force: :cascade do |t|
+    t.integer "option_id"
+    t.string "subscription_length"
+    t.decimal "subscription_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.integer "subscription_id"
+    t.integer "user_id"
+    t.integer "genre_id"
+    t.integer "option_id"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "billing_id"
+    t.integer "shipping_id"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "password"
+    t.string "type"
+    t.string "email"
+    t.string "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
