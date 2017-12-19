@@ -95,15 +95,14 @@ ActiveRecord::Schema.define(version: 20171219094045) do
     t.integer "shipping_id"
     t.string "first_name"
     t.string "last_name"
-    t.string "password"
     t.string "type"
     t.string "email"
     t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
-    t.boolean "admin", default: false
     t.string "remember_digest"
+    t.boolean "admin", default: false
     t.string "activation_digest"
     t.boolean "activated", default: false
     t.datetime "activated_at"
