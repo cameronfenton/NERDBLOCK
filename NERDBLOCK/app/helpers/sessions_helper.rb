@@ -11,7 +11,7 @@ module SessionsHelper
     cookies.permanent.signed[:user_id] = user.id
     cookies.permanent[:remember_token] = user.remember_token
   end
-  
+
   # Returns true if the given user is the current user.
   def current_user?(user)
     user == current_user
@@ -28,6 +28,26 @@ module SessionsHelper
         @current_user = user
       end
     end
+  end
+
+  def current_subscriptions
+
+  end
+
+  def add_subscription
+
+  end
+
+  def extend_subscription
+
+  end
+
+  def cancel_subscription
+
+  end
+
+  def fee_statement
+
   end
 
   # Returns true if the user is logged in, false otherwise.
@@ -48,7 +68,7 @@ module SessionsHelper
     session.delete(:user_id)
     @current_user = nil
   end
-  
+
   # Redirects to stored location (or to the default).
   def redirect_back_or(default)
     redirect_to(session[:forwarding_url] || default)
