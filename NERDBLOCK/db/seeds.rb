@@ -1,39 +1,51 @@
 User.create!(first_name:  "Uday",
+             last_name:  "Shah",
              email: "udayshah@nerdblock.com",
              password:              "password",
              admin:     true,
              activated: true,
              activated_at: Time.zone.now)
-User.create!(first_name:  "Cameron Fenton",
+User.create!(first_name:  "Cameron",
+             last_name:  "Fenton",
             email: "cameronfenton@nerdblock.com",
             password:              "password",
             admin:     true,
             activated: true,
             activated_at: Time.zone.now)
-User.create!(first_name:  "Gavin Harris",
+User.create!(first_name:  "Gavin",
+             last_name:  "Harris",
              email: "gavinharris@nerdblock.com",
              password:              "password",
              admin:     true,
              activated: true,
              activated_at: Time.zone.now)
-User.create!(first_name:  "Caleb Blunt",
+User.create!(first_name:  "Caleb",
+             last_name:  "Blunt",
             email: "calebblunt@nerdblock.com",
             password:              "password",
             admin:     false,
             activated: true,
             activated_at: Time.zone.now)
-User.create!(first_name:  "Cory Boasman",
-             email: "Cory Boasman@nerdblock.com",
+User.create!(first_name:  "Cory",
+             last_name:  "Boasman",
+             email: "coryboasman@nerdblock.com",
              password:              "password",
              admin:     false,
              activated: true,
              activated_at: Time.zone.now)
 
+ # name = full_name.split(' ')
+ # puts "Your first name is #{name.first}"
+ # puts "Your last name is #{name.last}"
+
 99.times do |n|
-  first_name  = Faker::first_name.first_name
+  full_name = name.split(' ')
+  first_name  = Faker::full_name.first
+  last_name = Faker::full_name.last
   email = "example-#{n+1}@railstutorial.org"
   password = "password"
   User.create!(first_name:  first_name,
+               last_name:  last_name,
               email: email,
               password:              password,
               activated: true,
