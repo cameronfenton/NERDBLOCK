@@ -39,9 +39,9 @@ User.create!(first_name:  "Cory",
  # puts "Your last name is #{name.last}"
 
 99.times do |n|
-  full_name = name.split(' ')
-  first_name  = Faker::full_name.first
-  last_name = Faker::full_name.last
+  full_name = Faker::name.split(' ')
+  first_name  = full_name.first
+  last_name = full_name.last
   email = "example-#{n+1}@railstutorial.org"
   password = "password"
   User.create!(first_name:  first_name,

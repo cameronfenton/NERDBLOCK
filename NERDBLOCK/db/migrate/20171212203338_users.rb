@@ -6,7 +6,6 @@ class Users < ActiveRecord::Migration[5.1]
       t.integer :shipping_id
       t.string :first_name
       t.string :last_name
-      t.string :password
       t.string :type
       t.string :email, unique: true
       t.string :phone
