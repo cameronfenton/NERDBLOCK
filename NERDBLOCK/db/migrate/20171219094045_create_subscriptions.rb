@@ -1,4 +1,4 @@
-class Subscriptions < ActiveRecord::Migration[5.1]
+class CreateSubscriptions < ActiveRecord::Migration[5.1]
   def change
     create_table :subscriptions do |t|
       t.integer :subscription_id, unique: true, auto_increment: true
