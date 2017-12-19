@@ -8,7 +8,7 @@
         with fun geeky content in a themed package
     </h2>
 
-    <%= link_to "Browse subscriptions", add_subscription, class: "btn btn-lg btn-primary" %>
+    <%= link_to "Browse subscriptions", '/subscriptions', class: "btn btn-lg btn-primary" %>
     <% if !logged_in? %>
       <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
     <% end %>
