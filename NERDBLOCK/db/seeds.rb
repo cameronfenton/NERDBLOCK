@@ -1,47 +1,41 @@
-User.create!(name:  "Uday Shah",
+User.create!(first_name:  "Uday",
              email: "udayshah@nerdblock.com",
              password:              "password",
-             password_confirmation: "password",
              admin:     true,
              activated: true,
              activated_at: Time.zone.now)
-User.create!(name:  "Cameron Fenton",
+User.create!(first_name:  "Cameron Fenton",
             email: "cameronfenton@nerdblock.com",
             password:              "password",
-            password_confirmation: "password",
             admin:     true,
             activated: true,
             activated_at: Time.zone.now)
-User.create!(name:  "Gavin Harris",
+User.create!(first_name:  "Gavin Harris",
              email: "gavinharris@nerdblock.com",
              password:              "password",
-             password_confirmation: "password",
              admin:     true,
              activated: true,
              activated_at: Time.zone.now)
-User.create!(name:  "Caleb Blunt",
+User.create!(first_name:  "Caleb Blunt",
             email: "calebblunt@nerdblock.com",
             password:              "password",
-            password_confirmation: "password",
             admin:     false,
             activated: true,
             activated_at: Time.zone.now)
-User.create!(name:  "Cory Boasman",
+User.create!(first_name:  "Cory Boasman",
              email: "Cory Boasman@nerdblock.com",
              password:              "password",
-             password_confirmation: "password",
              admin:     false,
              activated: true,
              activated_at: Time.zone.now)
 
 99.times do |n|
-  name  = Faker::Name.name
+  first_name  = Faker::first_name.first_name
   email = "example-#{n+1}@railstutorial.org"
   password = "password"
-  User.create!(name:  name,
+  User.create!(first_name:  first_name,
               email: email,
               password:              password,
-              password_confirmation: password,
               activated: true,
               activated_at: Time.zone.now)
 end
