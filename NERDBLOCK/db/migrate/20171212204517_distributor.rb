@@ -4,7 +4,7 @@ class Distributor < ActiveRecord::Migration[5.1]
       t.integer :address_id
       t.string :distributor_name
       t.string :distributor_phone
-      t.string :distributor_email
+      t.string :distributor_email, unique: true
       t.timestamps
     end
   end
