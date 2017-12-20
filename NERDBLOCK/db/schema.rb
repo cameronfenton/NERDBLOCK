@@ -56,7 +56,6 @@ ActiveRecord::Schema.define(version: 20171219094045) do
   end
 
   create_table "stock", force: :cascade do |t|
-    t.integer "item_id"
     t.integer "distributor_id"
     t.integer "item_quantity"
     t.integer "item_refill_quantity"

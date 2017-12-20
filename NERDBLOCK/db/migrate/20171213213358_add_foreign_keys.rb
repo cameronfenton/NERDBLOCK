@@ -8,7 +8,7 @@ class AddForeignKeys < ActiveRecord::Migration[5.1]
     add_foreign_key :orders, :users, column: :user_id, primary_key: :id
     add_foreign_key :orders, :subscriptions, column: :subscription_id, primary_key: :id
     add_foreign_key :distributor, :address, column: :address_id, primary_key: :id
-    add_foreign_key :stock, :item, column: :item_id, primary_key: :id
+    add_foreign_key :stock, :item, column: :id, primary_key: :id
     add_foreign_key :stock, :distributor, column: :distributor_id, primary_key: :id
   end
 end
