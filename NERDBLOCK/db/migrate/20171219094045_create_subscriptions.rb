@@ -1,7 +1,6 @@
 class CreateSubscriptions < ActiveRecord::Migration[5.1]
   def change
     create_table :subscriptions do |t|
-      t.integer :subscription_id, unique: true, auto_increment: true
       t.integer :user_id
       t.integer :genre_id
       t.integer :option_id

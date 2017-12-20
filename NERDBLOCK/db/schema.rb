@@ -13,7 +13,6 @@
 ActiveRecord::Schema.define(version: 20171219094045) do
 
   create_table "address", force: :cascade do |t|
-    t.integer "address_id"
     t.string "apt_number"
     t.string "building_number"
     t.string "street"
@@ -25,7 +24,6 @@ ActiveRecord::Schema.define(version: 20171219094045) do
   end
 
   create_table "distributor", force: :cascade do |t|
-    t.integer "distributor_id"
     t.integer "address_id"
     t.string "distributor_name"
     t.string "distributor_phone"
@@ -35,7 +33,6 @@ ActiveRecord::Schema.define(version: 20171219094045) do
   end
 
   create_table "genre", force: :cascade do |t|
-    t.integer "genre_id"
     t.string "genre_name"
     t.string "genre_description"
     t.datetime "created_at", null: false
@@ -43,7 +40,6 @@ ActiveRecord::Schema.define(version: 20171219094045) do
   end
 
   create_table "items", force: :cascade do |t|
-    t.string "item_id"
     t.string "item_name"
     t.string "item_description"
     t.decimal "item_price"
@@ -52,7 +48,6 @@ ActiveRecord::Schema.define(version: 20171219094045) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "order_id"
     t.integer "user_id"
     t.integer "subscription_id"
     t.decimal "monthly_price"
@@ -71,7 +66,6 @@ ActiveRecord::Schema.define(version: 20171219094045) do
   end
 
   create_table "subscription_options", force: :cascade do |t|
-    t.integer "option_id"
     t.string "subscription_length"
     t.decimal "subscription_price"
     t.datetime "created_at", null: false
@@ -79,7 +73,6 @@ ActiveRecord::Schema.define(version: 20171219094045) do
   end
 
   create_table "subscriptions", force: :cascade do |t|
-    t.integer "subscription_id"
     t.integer "user_id"
     t.integer "genre_id"
     t.integer "option_id"
@@ -90,26 +83,23 @@ ActiveRecord::Schema.define(version: 20171219094045) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.integer "user_id"
     t.integer "billing_id"
     t.integer "shipping_id"
     t.string "first_name"
     t.string "last_name"
-    t.string "password"
-    t.string "type"
+    t.string "password_digest"
+    t.string "userType", default: "c"
     t.string "email"
     t.string "phone"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "password_digest"
-    t.boolean "admin", default: false
-    t.string "remember_digest"
     t.string "activation_digest"
-    t.boolean "activated", default: false
+    t.boolean "activated", default: true
     t.datetime "activated_at"
+    t.string "remember_digest"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
-    t.index ["email"], name: "index_users_on_email", unique: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email"
   end
 
 end
