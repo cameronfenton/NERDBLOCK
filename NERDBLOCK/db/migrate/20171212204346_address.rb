@@ -7,7 +7,6 @@ class Address < ActiveRecord::Migration[5.1]
       t.string :city
       t.string :province
       t.string :postal_code
-
       t.timestamps
     end
   end

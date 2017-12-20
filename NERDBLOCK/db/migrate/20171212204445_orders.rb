@@ -4,7 +4,6 @@ class Orders < ActiveRecord::Migration[5.1]
       t.integer :user_id
       t.integer :subscription_id
       t.decimal :monthly_price
-
       t.timestamps
     end
   end

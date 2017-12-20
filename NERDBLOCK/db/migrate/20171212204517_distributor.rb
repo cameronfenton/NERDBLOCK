@@ -5,7 +5,6 @@ class Distributor < ActiveRecord::Migration[5.1]
       t.string :distributor_name
       t.string :distributor_phone
       t.string :distributor_email
-
       t.timestamps
     end
   end

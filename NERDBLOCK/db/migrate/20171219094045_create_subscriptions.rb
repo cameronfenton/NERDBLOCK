@@ -6,7 +6,6 @@ class CreateSubscriptions < ActiveRecord::Migration[5.1]
       t.integer :option_id
       t.datetime :start_date
       t.datetime :end_date
-
       t.timestamps
     end
   end

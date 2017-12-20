@@ -6,7 +6,6 @@ class Stock < ActiveRecord::Migration[5.1]
       t.integer :item_quantity
       t.integer :item_refill_quantity
       t.decimal :item_refill_cost
-
       t.timestamps
     end
   end

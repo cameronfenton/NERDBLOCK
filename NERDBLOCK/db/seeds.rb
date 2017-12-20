@@ -33,11 +33,10 @@ User.create!(first_name: "Cory",
              userType: 'S',
              activated: true,
              activated_at: Time.zone.now)
-
+             
  # name = full_name.split(' ')
  # puts "Your first name is #{name.first}"
  # puts "Your last name is #{name.last}"
-
 99.times do |n|
   full_name = Faker::Name.name.split(" ")
   first_name  = full_name.first
