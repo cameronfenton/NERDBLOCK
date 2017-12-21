@@ -4,9 +4,15 @@
     <aside class="col-md-4">
         <section class="genre-info">
             <h1>
-                <%= @genre.genre_name %>,
-                <%= @genre.genre_description %>
+                Genre:
             </h1>
+            <%= @genre.genre_name %><br />
+            <h1>
+                Description:
+            </h1>
+            <%= @genre.genre_description %><br />
+
+
             <%= render 'form' %>
         </section>
     </aside>
