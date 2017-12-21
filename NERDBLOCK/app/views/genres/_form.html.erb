@@ -1,4 +1,6 @@
-<%= form_with(model: @genre, local: true) do |form| %>
+<%= form_with(model: @subscriptions, local: true) do |form| %>
+
+  <%= form.select :length, [['3 month','hot'],['1 month','medium']] %>
 
   <%= form.submit yield(:button_text), class: "btn btn-primary" %>
 

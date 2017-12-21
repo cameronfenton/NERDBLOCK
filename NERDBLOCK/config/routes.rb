@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get	 '/subscriptions',    to: 'subscriptions#index'
   get  '/genres',           to: 'genres#index'
+  post	 '/subscriptions_new',    to: 'subscriptions#new'
+
   resources :users
   resources :subscriptions
   resources :genres
