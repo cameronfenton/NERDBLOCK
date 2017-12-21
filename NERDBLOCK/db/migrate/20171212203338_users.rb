@@ -1,8 +1,8 @@
 class Users < ActiveRecord::Migration[5.1]
   def change
     create_table :users do |t|
-      t.integer :billing_id
-      t.integer :shipping_id
+      t.integer :billing_id, default: '1'
+      t.integer :shipping_id, default: '1'
       t.string :first_name
       t.string :last_name
       t.string :password_digest
