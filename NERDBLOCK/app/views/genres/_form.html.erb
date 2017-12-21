@@ -1,6 +1,6 @@
 <%= form_with(model: @subscriptions, local: true) do |form| %>
 
-  <%= form.select :length, [['3 month','hot'],['1 month','medium']] %>
+  <%= form.select :option_id, [['Option 1',1],['Option 2',2]] %>
 
   <%= form.submit yield(:button_text), class: "btn btn-primary" %>
 
