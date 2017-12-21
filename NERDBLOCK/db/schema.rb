@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171219094045) do
+ActiveRecord::Schema.define(version: 20171221054455) do
 
   create_table "address", force: :cascade do |t|
     t.string "apt_number"
@@ -32,9 +32,10 @@ ActiveRecord::Schema.define(version: 20171219094045) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "genre", force: :cascade do |t|
-    t.string "genre_name"
-    t.string "genre_description"
+  create_table "genres", force: :cascade do |t|
+    t.integer "genre_id"
+    t.datetime "genre_name"
+    t.datetime "genre_description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
