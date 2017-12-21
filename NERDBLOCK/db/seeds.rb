@@ -7,7 +7,7 @@ User.create!(first_name: "Uday",
              activated_at: Time.zone.now)
 User.create!(first_name: "Cameron",
              last_name: "Fenton",
-            email: "cameronfenton@nerdblock.com",
+            email: "fentoncameron@gmail.com",
             password: "password",
             userType: 'A',
             activated: true,
