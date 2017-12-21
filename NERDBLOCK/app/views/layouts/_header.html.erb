@@ -12,12 +12,11 @@
               Subscriptions <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><%= link_to "My Subscriptions", current_subscriptions %></li>
-              <li><%= link_to "Add", add_subscription %></li>
+              <li><%= link_to "My Subscriptions", subscriptions_path %></li>
+              <li><%= link_to "Browse NERDBLOCKS", genres_path %></li>
               <li><%= link_to "Extend", extend_subscription %></li>
               <li><%= link_to "Cancel", cancel_subscription %></li>
               <li><%= link_to "Fee Statement", fee_statement %></li>
-			  <li><%= link_to "Browse Subscriptions", subscriptions_path %></li>
             </ul>
           </li>
           <li class="dropdown">

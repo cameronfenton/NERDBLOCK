@@ -1,5 +1,5 @@
 <% provide(:title, @genre.genre_name) %>
-
+<% provide(:button_text, 'Subscribe') %>
 <div class="row">
     <aside class="col-md-4">
         <section class="genre-info">
@@ -7,6 +7,7 @@
                 <%= @genre.genre_name %>,
                 <%= @genre.genre_description %>
             </h1>
+            <%= render 'form' %>
         </section>
     </aside>
 </div>
