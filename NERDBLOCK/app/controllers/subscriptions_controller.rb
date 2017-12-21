@@ -2,7 +2,7 @@ class SubscriptionsController < ApplicationController
   before_action :set_subscription, only: [:show, :edit, :update, :destroy]
 
   def index
-    @subscriptions = Subscription.all
+      @subscriptions = Subscription.where(user_id: current_user.id)
   end
 
   def show
@@ -59,6 +59,5 @@ class SubscriptionsController < ApplicationController
 
     def subscription_params
       params.permit(:user_id, :genre_id, :option_id, :start_date, :end_date)
-
     end
 end

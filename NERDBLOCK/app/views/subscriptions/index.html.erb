@@ -1,6 +1,11 @@
 <% provide(:title, 'All subscriptions') %>
 <h1>All subscriptions</h1>
 
-<ul class="subscriptions">
-  <%= render @subscriptions %>
-</ul>
+<table style="width:50%">
+  <tr>
+    <th>Sub ID</th>
+    <th>Genre Name</th>
+    <th></th>
+  </tr>
+    <%= render @subscriptions %>
+</table>

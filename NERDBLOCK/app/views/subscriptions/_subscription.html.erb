@@ -1,0 +1,18 @@
+<tr>
+  <td>
+    <br />
+  </td>
+</tr>
+
+<tr class="subscriptions">
+  <td>
+    <%= subscription.id %>
+  </td>
+  <td>
+    <% genre = Genre.find(subscription.genre_id)%>
+    <%= genre.genre_name %>
+  </td>
+  <td>
+  <%= link_to "Open", subscription %>
+  </td>
+</tr>

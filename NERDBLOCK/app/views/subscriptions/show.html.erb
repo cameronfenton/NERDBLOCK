@@ -1,14 +1,15 @@
-
-<% provide(:title, @subscription.id) %>
+<% provide(:title, "Subscriptions") %>
 
 <div class="row">
     <aside class="col-md-4">
         <section class="subscription-info">
+	          <% genre = Genre.find(@subscription.genre_id)%>
             <h1>
-				<%= @genre.genre_name %>
-                <%= @subscription.id %>
-                <%= @subscription.option_id %>
+              <b>Subscription ID:</b> <%= @subscription.id %>
             </h1>
+            <br /><b>Subscription Genre:</b> <%= genre.genre_name %>
+            <br /><b>Description:</b> <%= genre.genre_description %>
+            <br /><b>Start Date:</b> <%= @subscription.start_date.to_date%> <b>End Date:</b> <%= @subscription.end_date.to_date %>
         </section>
     </aside>
 </div>
