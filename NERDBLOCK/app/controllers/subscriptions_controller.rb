@@ -6,6 +6,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def show
+		@subscription = Subscription.find(params[:id])
   end
 
   def new
@@ -58,5 +59,6 @@ class SubscriptionsController < ApplicationController
 
     def subscription_params
       params.permit(:user_id, :genre_id, :option_id, :start_date, :end_date)
+
     end
 end
