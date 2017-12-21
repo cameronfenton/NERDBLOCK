@@ -4,13 +4,13 @@ class GenresController < ApplicationController
   # GET /genres
   # GET /genres.json
   def index
-    @genres = Genre.all.paginate(page: params[:page])
+    @genres = Genre.all
   end
 
   # GET /genres/1
   # GET /genres/1.json
   def show
-    @genre = Genre.find(params[:id])
+    @genres = Genre.find(params[:id])
   end
 
   # GET /genres/new

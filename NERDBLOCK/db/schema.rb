@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171221054455) do
+ActiveRecord::Schema.define(version: 20171219094045) do
 
-  create_table "address", force: :cascade do |t|
+  create_table "addresses", force: :cascade do |t|
     t.string "apt_number"
     t.string "building_number"
     t.string "street"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20171221054455) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "distributor", force: :cascade do |t|
+  create_table "distributors", force: :cascade do |t|
     t.integer "address_id"
     t.string "distributor_name"
     t.string "distributor_phone"
@@ -33,9 +33,8 @@ ActiveRecord::Schema.define(version: 20171221054455) do
   end
 
   create_table "genres", force: :cascade do |t|
-    t.integer "genre_id"
-    t.datetime "genre_name"
-    t.datetime "genre_description"
+    t.string "genre_name"
+    t.string "genre_description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -56,7 +55,7 @@ ActiveRecord::Schema.define(version: 20171221054455) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "stock", force: :cascade do |t|
+  create_table "stocks", force: :cascade do |t|
     t.integer "distributor_id"
     t.integer "item_quantity"
     t.integer "item_refill_quantity"

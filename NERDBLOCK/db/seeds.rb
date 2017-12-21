@@ -34,8 +34,8 @@ User.create!(first_name: "Cory",
              activated: true,
              activated_at: Time.zone.now)
 
-Genre.create!(genre_name: "Horror",
-              genre_description: "2 Spoopy 5 me")
+# Genre.create!(genre_name: "Horror",
+#               genre_description: "2 Spoopy 5 me")
 
  # name = full_name.split(' ')
  # puts "Your first name is #{name.first}"
