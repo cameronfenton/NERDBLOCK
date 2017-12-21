@@ -1,13 +1,47 @@
 <% provide(:title, @user.first_name) %>
 
 <div class="row">
-    <aside class="col-md-4">
-        <section class="user-info">
-            <h1>
-                <%= gravatar_for @user %>
-                <%= @user.first_name %>
-                <%= @user.last_name %>
-            </h1>
-        </section>
-    </aside>
+  <aside class="col-md-4">
+    <section class="user-info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.first_name %>
+        <%= @user.last_name %>
+      </h1>
+    </section>
+  </aside>
+
+  <aside class="col-md-4">
+    <%
+      ship_id = @user.shipping_id
+      @shipping = Address.find(ship_id)
+    %>
+
+    <h3> Shipping Address </h3>
+    <p>
+      Apt: <u><%= @shipping.apt_number %></u> <br/>
+      Building: <u><%= @shipping.building_number %></u> <br/>
+      Street: <u><%= @shipping.street %></u> <br/>
+      City: <u><%= @shipping.city %></u> <br/>
+      Province: <u><%= @shipping.province %></u> <br/>
+      Postal Code: <u><%= @shipping.postal_code %></u> <br/>
+    </p>
+  </aside>
+
+  <aside class="col-md-4">
+    <%
+      ship_id = @user.billing_id
+      @billing = Address.find(ship_id)
+    %>
+
+    <h3> Billing Address </h3>
+    <p>
+      Apt: <u><%= @billing.apt_number %></u> <br/>
+      Building: <u><%= @billing.building_number %></u> <br/>
+      Street: <u><%= @billing.street %></u> <br/>
+      City: <u><%= @billing.city %></u> <br/>
+      Province: <u><%= @billing.province %></u> <br/>
+      Postal Code: <u><%= @billing.postal_code %></u> <br/>
+    </p>
+  </aside>
 </div>
