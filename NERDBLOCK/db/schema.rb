@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171219094045) do
+ActiveRecord::Schema.define(version: 20171213213358) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "apt_number"
