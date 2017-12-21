@@ -12,8 +12,10 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   get	 '/subscriptions',    to: 'subscriptions#index'
+  get  '/genres',           to: 'genres#index'
   resources :users
   resources :subscriptions
+  resources :genres
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
 end
