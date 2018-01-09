@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20171213213358) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "addresses", force: :cascade do |t|
     t.string "apt_number"
     t.string "building_number"
@@ -82,8 +85,8 @@ ActiveRecord::Schema.define(version: 20171213213358) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.integer "billing_id"
-    t.integer "shipping_id"
+    t.integer "billing_id", default: 1
+    t.integer "shipping_id", default: 1
     t.string "first_name"
     t.string "last_name"
     t.string "password_digest"
@@ -101,4 +104,14 @@ ActiveRecord::Schema.define(version: 20171213213358) do
     t.index ["email"], name: "index_users_on_email"
   end
 
+  add_foreign_key "distributors", "addresses"
+  add_foreign_key "orders", "subscriptions"
+  add_foreign_key "orders", "users"
+  add_foreign_key "stocks", "distributors"
+  add_foreign_key "stocks", "items", column: "id"
+  add_foreign_key "subscriptions", "genres"
+  add_foreign_key "subscriptions", "subscription_options", column: "option_id"
+  add_foreign_key "subscriptions", "users"
+  add_foreign_key "users", "addresses", column: "billing_id"
+  add_foreign_key "users", "addresses", column: "shipping_id"
 end
