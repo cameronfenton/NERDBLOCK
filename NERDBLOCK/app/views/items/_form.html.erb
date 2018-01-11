@@ -1,0 +1,10 @@
+<%= form_with(model: @subscriptions, local: true) do |form| %>
+
+  <%= form.hidden_field :user_id, :value => current_user.id %>
+  <%= form.hidden_field :genre_id, :value => @genre.id %>
+  <%= form.hidden_field :start_date, :value => Time.now() %>
+  <%= form.hidden_field :end_date, :value => Time.now() + 1.month %>
+  <%= form.select :option_id, [['1 Month',1],['3 Month',2]] %>
+  <%= form.submit yield(:button_text), class: "btn btn-primary" %>
+
+<% end %>
