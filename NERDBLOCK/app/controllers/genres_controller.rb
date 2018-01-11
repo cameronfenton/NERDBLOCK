@@ -70,6 +70,6 @@ class GenresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def genre_params
-      params.fetch(:genre, {})
+        params.permit(:genre_name, :genre_description)
     end
 end

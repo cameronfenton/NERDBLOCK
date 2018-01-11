@@ -1,0 +1,2 @@
+class SubscriptionOption < ApplicationRecord
+end

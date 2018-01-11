@@ -1,5 +1,5 @@
 <h1>New Genre</h1>
-
-<%= render 'form', genre: @genre %>
+<% provide(:button_text, 'Create new NERDBLOCK Genre') %>
+<%= render 'newForm', genre: @genre %>
 
 <%= link_to 'Back', genres_path %>

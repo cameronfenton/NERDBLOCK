@@ -1,3 +1,32 @@
-<li>
-  <%= link_to genre.genre_name, genre %>
-</li>
+<tr>
+  <td>
+    <br />
+  </td>
+</tr>
+
+<tr class="items">
+
+    <tr>
+        <td>
+            Name: <%= genre.genre_name %><br>
+        </td>
+        <td>
+            Description: <%= genre.genre_description %><br>
+        </td>
+        <td>
+        <% if current_user.userType == "A" || current_user.userType == "S"%>
+        <%= link_to "edit", edit_genre_path(genre) %>
+        <% end %>
+        <% if current_user.userType == "A" || current_user.userType == "S"%>
+            <%= link_to "delete", genre, method: :delete,
+                                        data: { confirm: "You sure?" } %>
+        <% end %>
+    </tr>
+    <tr>
+      <td colspan=2>
+        <hr />
+      </td>
+
+    </tr>
+
+</tr>

@@ -11,12 +11,15 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
+  get '/genres/new', to: 'genres#new'
+  post '/genres/new',   to: 'genres#create'
   get	 '/subscriptions',    to: 'subscriptions#index'
   get  '/genres',           to: 'genres#index'
   post	 '/genres/:id',    to: 'subscriptions#create'
   post '/items/:id/edit', to: 'items#update'
   get '/items/new', to: 'items#new'
   post '/items/new',   to: 'items#create'
+  post '/genres/:id/edit', to: 'genres#update'
 
   resources :users
   resources :subscriptions

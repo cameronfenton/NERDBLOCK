@@ -1,0 +1,10 @@
+<%= form_with(model: @genres, local: true) do |form| %>
+
+<%= form.label :genre_name%>
+<%= form.text_field :genre_name, value: @genre.genre_name, class: 'form-control' %>
+<%= form.label :genre_description %>
+<%= form.text_field :genre_description, value: @genre.genre_description, class: 'form-control' %>
+
+<%= form.submit yield(:button_text), class: "btn btn-primary" %>
+
+<% end %>

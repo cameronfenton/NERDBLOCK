@@ -1,5 +1,10 @@
 <% provide(:title, 'Genres') %>
-<h1>All genres</h1>
+<h1>All NERDBLOCK genres</h1>
+<% provide(:button_text, 'Create new NERDBLOCK Genre') %>
+
+<% if current_user.userType == "A" || current_user.userType == "S"%>
+<%= link_to "Create new NERDBLOCK Genre", genres_new_path %>
+<% end %>
 
 <ul class="genres">
   <%= render @genres %>
