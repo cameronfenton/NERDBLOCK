@@ -14,5 +14,7 @@ class AddForeignKeys < ActiveRecord::Migration[5.1]
 
     add_foreign_key :stocks, :items, column: :id, primary_key: :id
     add_foreign_key :stocks, :distributors, column: :distributor_id, primary_key: :id
+
+    add_foreign_key :items, :genres, column: :genre_id, primary_key: :id
   end
 end
