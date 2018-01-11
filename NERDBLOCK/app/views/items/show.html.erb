@@ -1,28 +1,18 @@
-<% provide(:title, @genre.genre_name) %>
+<% provide(:title, @item.item_name) %>
 <% provide(:button_text, 'Subscribe') %>
 <div class="row">
     <aside class="col-md-4">
-        <section class="genre-info">
+        <section class="item-info">
             <h1>
-                Genre:
+                Item:
             </h1>
-            <%= @genre.genre_name %><br />
+            <%= @item.item_name %><br />
 
             <h1>
                 Description:
             </h1>
-            <%= @genre.genre_description %><br />
-            <h1>
-                Items:
-            </h1>
+            <%= @item.item_description %><br />
 
-            <table style="width:50%">
-              <tr>
-                <th>Item Name</th>
-                <th>Item Description</th>
-              </tr>
-            <%= render 'item' %>
-            </table>
             <%= render 'form' %>
         </section>
     </aside>

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get	 '/subscriptions',    to: 'subscriptions#index'
   get  '/genres',           to: 'genres#index'
   post	 '/genres/:id',    to: 'subscriptions#create'
+  get	 '/items',    to: 'items#index'
 
   resources :users
   resources :subscriptions

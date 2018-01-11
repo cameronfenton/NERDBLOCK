@@ -1,7 +1,7 @@
 class itemsController < ApplicationController
 
 	  def index
-	    @items = item.where(activated: true).paginate(page: params[:page])
+	    @items = Item.all
 	  end
 
 	  def show
