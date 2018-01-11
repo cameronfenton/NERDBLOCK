@@ -11,8 +11,12 @@
                 Description:
             </h1>
             <%= @genre.genre_description %><br />
+            <h1>
+                Items:
+            </h1>
 
-
+            <%= render 'item' %>
+            
             <%= render 'form' %>
         </section>
     </aside>

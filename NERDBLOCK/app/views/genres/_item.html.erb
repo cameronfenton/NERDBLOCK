@@ -1,0 +1,16 @@
+<tr>
+  <td>
+    <br />
+  </td>
+</tr>
+
+<tr class="items">
+
+  <td>
+
+  <%  items = Item.where(:genre_id => @genre.id).select("item_name")%>
+  <% items.each do |item| %>
+    <%= item.item_name %><br>
+  <% end %>
+  </td>
+</tr>
