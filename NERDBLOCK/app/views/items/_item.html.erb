@@ -6,9 +6,6 @@
 
 <tr class="items">
 
-<%  items = Item.where(:genre_id => @genre.id).select("item_name, item_description")%>
-
-<% items.each do |item| %>
     <tr>
         <td>
             <%= item.item_name %><br>
@@ -16,6 +13,14 @@
         <td>
             <%= item.item_description %><br>
         </td>
+        <td>
+        <% if current_user.userType == "A" %>
+        <%= link_to "edit", edit_item_path(item) %>
+        <% end %>
+        <% if current_user.userType == "A" %>
+            <%= link_to "delete", item, method: :delete,
+                                        data: { confirm: "You sure?" } %>
+        <% end %>
     </tr>
     <tr>
       <td colspan=2>
@@ -23,7 +28,5 @@
       </td>
 
     </tr>
-
-<% end %>
 
 </tr>

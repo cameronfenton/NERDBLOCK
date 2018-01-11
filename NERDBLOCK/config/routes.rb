@@ -14,11 +14,12 @@ Rails.application.routes.draw do
   get	 '/subscriptions',    to: 'subscriptions#index'
   get  '/genres',           to: 'genres#index'
   post	 '/genres/:id',    to: 'subscriptions#create'
-  get	 '/items',    to: 'items#index'
+  post '/items/:id/edit', to: 'items#update'
 
   resources :users
   resources :subscriptions
   resources :genres
+  resources :items
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
 end

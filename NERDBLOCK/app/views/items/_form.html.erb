@@ -1,10 +1,14 @@
 <%= form_with(model: @items, local: true) do |form| %>
 
-  <!-- <%= form.hidden_field :user_id, :value => current_user.id %>
-  <%= form.hidden_field :genre_id, :value => @genre.id %>
-  <%= form.hidden_field :start_date, :value => Time.now() %>
-  <%= form.hidden_field :end_date, :value => Time.now() + 1.month %>
-  <%= form.select :option_id, [['1 Month',1],['3 Month',2]] %>
-  <%= form.submit yield(:button_text), class: "btn btn-primary" %> -->
+    <%= form.label :item_id%>
+    <%= form.text_field :item_name, value: @item.item_name, class: 'form-control' %>
+    <%= form.label :item_description %>
+    <%= form.text_field :item_description, value: @item.item_description, class: 'form-control' %>
+    <%= form.label :item_price %>
+    <%= form.text_field :item_price, value: @item.item_price, class: 'form-control' %>
+
+    <%= form.select :genre_id,
+                  options_from_collection_for_select(Genre.all, "id", "genre_name", @item.genre_id)%>
+    <%= form.submit yield(:button_text), class: "btn btn-primary" %>
 
 <% end %>
