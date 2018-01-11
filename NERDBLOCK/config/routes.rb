@@ -15,7 +15,8 @@ Rails.application.routes.draw do
   get  '/genres',           to: 'genres#index'
   post	 '/genres/:id',    to: 'subscriptions#create'
   post '/items/:id/edit', to: 'items#update'
-  get '/item_create', to: 'items#new'
+  get '/items/new', to: 'items#new'
+  post '/items/new',   to: 'items#create'
 
   resources :users
   resources :subscriptions

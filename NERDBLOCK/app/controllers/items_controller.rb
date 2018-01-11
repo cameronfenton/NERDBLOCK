@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @item = item.new
+    @item = Item.new
   end
 
   def edit
@@ -20,8 +20,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      # flash[:info] = "Please check your email to activate your account."
-      redirect_to item_url
+        redirect_to items_url
     else
       render 'new'
     end

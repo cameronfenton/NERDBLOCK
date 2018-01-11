@@ -3,7 +3,7 @@
 <h1>All items</h1>
 
 <% if current_user.userType == "A" || current_user.userType == "S"%>
-<%= link_to "Create new item", item_create_path %>
+<%= link_to "Create new item", items_new_path %>
 <% end %>
 
 <ul class="items">
