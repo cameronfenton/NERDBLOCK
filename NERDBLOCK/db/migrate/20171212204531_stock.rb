@@ -1,5 +1,5 @@
 class Stock < ActiveRecord::Migration[5.1]
-  def change
+  def up
     create_table :stocks do |t|
       t.integer :distributor_id
       t.integer :item_quantity

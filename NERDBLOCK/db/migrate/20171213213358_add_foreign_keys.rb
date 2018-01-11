@@ -1,5 +1,5 @@
 class AddForeignKeys < ActiveRecord::Migration[5.1]
-  def change
+  def up
     add_foreign_key :users, :addresses, column: :billing_id, primary_key: :id
     add_foreign_key :users, :addresses, column: :shipping_id, primary_key: :id
 

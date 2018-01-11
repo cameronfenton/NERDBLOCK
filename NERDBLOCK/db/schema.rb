@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20171213213358) do
   end
 
   create_table "items", force: :cascade do |t|
+    t.integer "genre_id"
     t.string "item_name"
     t.string "item_description"
     t.decimal "item_price"
@@ -105,9 +106,9 @@ ActiveRecord::Schema.define(version: 20171213213358) do
   end
 
   add_foreign_key "distributors", "addresses"
+  add_foreign_key "items", "genres"
   add_foreign_key "orders", "subscriptions"
   add_foreign_key "orders", "users"
-  add_foreign_key "stocks", "distributors"
   add_foreign_key "stocks", "items", column: "id"
   add_foreign_key "subscriptions", "genres"
   add_foreign_key "subscriptions", "subscription_options", column: "option_id"

@@ -1,3 +1,12 @@
+Address.create!(apt_number: "1",
+               building_number: "1",
+               street: "123 street street",
+               city: "Oshawa",
+               province: "Ontario",
+               postal_code: "A1B2C3",
+               created_at: Time.zone.now,
+               updated_at: Time.zone.now)
+
 User.create!(first_name: "Uday",
              last_name: "Shah",
              email: "udayshah@nerdblock.com",
@@ -34,12 +43,20 @@ User.create!(first_name: "Cory",
              activated: true,
              activated_at: Time.zone.now)
 
-# Genre.create!(genre_name: "Horror",
-#               genre_description: "2 Spoopy 5 me")
+Genre.create!(genre_name: "Horror",
+              genre_description: "A NERDBLOCK of lots of scary horror themed
+              items, beware of this NERDBLOCK",
+              created_at: Time.zone.now,
+              updated_at: Time.zone.now)
 
- # name = full_name.split(' ')
- # puts "Your first name is #{name.first}"
- # puts "Your last name is #{name.last}"
+Item.create!(genre_id: 1,
+            item_name: "Skeleton Mask",
+            item_price: 19,
+            created_at: Time.zone.now,
+            updated_at: Time.zone.now)
+
+
+
 99.times do |n|
   full_name = Faker::Name.name.split(" ")
   first_name  = full_name.first
