@@ -14,10 +14,10 @@
             <%= item.item_description %><br>
         </td>
         <td>
-        <% if current_user.userType == "A" %>
+        <% if current_user.userType == "A" || current_user.userType == "S"%>
         <%= link_to "edit", edit_item_path(item) %>
         <% end %>
-        <% if current_user.userType == "A" %>
+        <% if current_user.userType == "A" || current_user.userType == "S"%>
             <%= link_to "delete", item, method: :delete,
                                         data: { confirm: "You sure?" } %>
         <% end %>

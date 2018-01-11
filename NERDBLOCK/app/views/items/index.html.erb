@@ -2,6 +2,10 @@
 <% provide(:button_text, 'Create new item') %>
 <h1>All items</h1>
 
+<% if current_user.userType == "A" || current_user.userType == "S"%>
+<%= link_to "Create new item", item_create_path %>
+<% end %>
+
 <ul class="items">
   <%= render @items %>
 </ul>
